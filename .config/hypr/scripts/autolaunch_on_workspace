@@ -1,0 +1,15 @@
+#! /bin/sh
+
+# hyprctl keyword windowrule "workspace 4 silent,Electron" && hyprctl dispatch exec "discord"
+hyprctl keyword windowrule "workspace special:spterm silent,spterm" && hyprctl dispatch exec "kitty --class 'spterm'"
+hyprctl keyword windowrule "workspace special:spcalc silent,spcalc" && hyprctl dispatch exec "kitty --class 'spcalc' -e bc -ql"
+hyprctl keyword windowrule "workspace special:spbtop silent,btop" && hyprctl dispatch exec "kitty --class 'btop' -e btop"
+hyprctl keyword windowrule "workspace 5 silent;tile,brave-mfhpbolkhgobaabcbabdlnhidbjpoogc-Default" && hyprctl dispatch exec "brave --profile-directory=Default --app-id=mfhpbolkhgobaabcbabdlnhidbjpoogc --app-run-on-os-login-mode=windowed"
+
+sleep 15
+
+hyprctl keyword windowrule "unset,spterm"
+hyprctl keyword windowrule "unset,spcalc"
+hyprctl keyword windowrule "unset,btop"
+hyprctl keyword windowrule "unset,brave-mfhpbolkhgobaabcbabdlnhidbjpoogc-Default"
+#hyprctl reload
